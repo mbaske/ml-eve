@@ -111,7 +111,7 @@ public class Triangle
         };
     }
 
-    private Vector3 GetVertex(float radius, int index)
+    private static Vector3 GetVertex(float radius, int index)
     {
         float angle = index * 60 * Mathf.Deg2Rad;
         return new Vector3(radius * Mathf.Sin(angle), 0, radius * Mathf.Cos(angle));

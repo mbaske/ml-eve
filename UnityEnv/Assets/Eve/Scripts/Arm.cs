@@ -27,8 +27,6 @@ public class Arm : MonoBehaviour
     public void Rotate(Vector3 rot, float force)
     {
         // rot, force -> -1/+1
-        // TODO high joint rotation delta can break physics.
-        // Workaround: interpolation.
         Quaternion r = Quaternion.Euler(center + Vector3.Scale(halfRange, rot));
         joint.targetRotation = Quaternion.Slerp(joint.targetRotation, r, 0.25f);
         drive.maximumForce = Mathf.Pow(10f, 3f + force); // 100 - 10000
